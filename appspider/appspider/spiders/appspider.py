@@ -58,3 +58,7 @@ class AppSpiderAnzhi(scrapy.Spider):
                 'icon': app.xpath("./div[@class='app_icon']/a/img/@src").get(),
                 'desc': app.xpath("./div[@class='app_info']/p/text()").get(),
             }
+            #爬取下一页
+            # next_page_url = response.xpath('//a[@class="button next"]').extract_first()
+            # if next_page_url is not None:
+            #         yield scrapy.Request(response.urljoin(next_page_url))
